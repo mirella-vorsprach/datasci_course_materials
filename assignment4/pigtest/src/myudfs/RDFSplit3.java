@@ -12,9 +12,11 @@ import java.lang.IllegalStateException;
 import org.apache.pig.EvalFunc;
 import org.apache.pig.data.Tuple;
 import org.apache.pig.data.TupleFactory;
+import org.apache.log4j.Logger;
 
 public class RDFSplit3 extends EvalFunc<Tuple> {
     private final static TupleFactory tupleFactory = TupleFactory.getInstance();
+    private static final Logger log = Logger.getLogger(RDFSplit3.class);
     private final static NQuadParser nquadParser = new NQuadParser();
 
     public Tuple exec(Tuple input) throws IOException {

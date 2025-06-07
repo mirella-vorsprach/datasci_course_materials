@@ -26,6 +26,7 @@ import java.util.regex.PatternSyntaxException;
 import org.apache.pig.EvalFunc;
 import org.apache.pig.data.Tuple;
 import org.apache.pig.data.TupleFactory;
+import org.apache.log4j.Logger;
 
 /**
  * Wrapper around Java's String.split<br>
@@ -44,6 +45,7 @@ import org.apache.pig.data.TupleFactory;
 public class Split extends EvalFunc<Tuple> {
 
     private final static TupleFactory tupleFactory = TupleFactory.getInstance();
+    private static final Logger log = Logger.getLogger(Split.class);
 
     /**
      * Wrapper around Java's String.split
