@@ -29,6 +29,7 @@ import java.lang.IllegalStateException;
 import org.apache.pig.EvalFunc;
 import org.apache.pig.data.Tuple;
 import org.apache.pig.data.TupleFactory;
+import org.apache.log4j.Logger;
 
 /**
  * Wrapper around Java's String.split<br>
@@ -46,6 +47,7 @@ import org.apache.pig.data.TupleFactory;
 public class RDFSplit2 extends EvalFunc<Tuple> {
 
     private final static TupleFactory tupleFactory = TupleFactory.getInstance();
+    private static final Logger log = Logger.getLogger(RDFSplit2.class);
 	
 	private static String uriRef = "(<.*>)";
 	private static String languageString = "(\".*\""+"(@"+"[a-z]+(-[a-z0-9]+)*)?)";
